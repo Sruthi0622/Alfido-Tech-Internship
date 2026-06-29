@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer – Advanced Information Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🌍 Country Explorer</div>
+            <div class="nav-actions">
+                <button class="btn-fav-toggle" id="viewFavsBtn">❤️ Favorites (<span id="favCount">0</span>)</button>
+                <button class="dark-toggle" id="darkToggle">🌙</button>
+            </div>
+        </div>
+
+        <div class="hero">
+            <h1>Explore the World</h1>
+            <p>Discover complete country infrastructure, structural state trees, and real-time live currency exchanges instantly</p>
+        </div>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <div class="input-autocomplete-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-box" 
+                        placeholder="Search country or major city (e.g., India, USA, London, Japan)..."
+                        autocomplete="off"
+                    >
+                    <div class="suggestions-dropdown" id="suggestionsBox"></div>
+                </div>
+                <button class="search-btn" id="searchBtn">Search</button>
+            </div>
+            
+            <div class="history-container">
+                <span class="history-label">Recents:</span>
+                <div class="history-chips" id="historyChips"></div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Processing request metadata and syncing financial rates...</p>
+        </div>
+
+        <div class="error" id="error"></div>
+
+        <div id="results"></div>
+
+        <div class="empty" id="empty">
+            <div class="empty-icon">🗺️</div>
+            <h2>Start Exploring</h2>
+            <p>Search for any global destination above or click an autocomplete suggestion tag to extract real-time attributes.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

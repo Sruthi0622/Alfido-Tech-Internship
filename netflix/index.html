@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <meta name="description" content="A modern, responsive Netflix homepage UI clone built with HTML, CSS & JavaScript." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__left">
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#home" class="logo">NETFLIX</a>
+      <nav class="navbar__links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#tv">TV Shows</a>
+        <a href="#movies">Movies</a>
+        <a href="#new">New &amp; Popular</a>
+        <a href="#mylist">My List</a>
+      </nav>
+    </div>
+
+    <div class="navbar__right">
+      <div class="search" id="searchWrap">
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm10 2-5.5-5.5"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <input type="text" id="searchInput" placeholder="Titles, people, genres" />
+      </div>
+
+      <button class="icon-btn" id="bellBtn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M6 8a6 6 0 1 1 12 0c0 3 1 5 2 6H4c1-1 2-3 2-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M9.5 18a2.5 2.5 0 0 0 5 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="dot"></span>
+      </button>
+
+      <div class="profile" id="profileWrap" tabindex="0">
+        <span class="profile__avatar">S</span>
+        <svg class="profile__caret" viewBox="0 0 24 24" fill="none">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="profile__menu">
+          <a href="#">Manage Profiles</a>
+          <a href="#">Account</a>
+          <a href="#">Help Center</a>
+          <hr>
+          <a href="#">Sign out of Netflix</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero__bg">
+    <div class="hero__bg-grain"></div>
+  </div>
+  <div class="hero__fade"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">NETFLIX ORIGINAL SERIES</p>
+    <h1 class="hero__title">Stranger Things</h1>
+    <div class="hero__meta">
+      <span class="match">98% Match</span>
+      <span>2022</span>
+      <span class="tag">16+</span>
+      <span>4 Seasons</span>
+      <span class="tag">HD</span>
+    </div>
+    <p class="hero__desc">When a boy vanishes, a small town uncovers a mystery involving secret experiments,
+      terrifying supernatural forces and one strange little girl with extraordinary powers.</p>
+
+    <div class="hero__actions">
+      <button class="btn btn--play" id="heroPlayBtn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Play
+      </button>
+      <button class="btn btn--info" id="heroInfoBtn">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 11v5M12 8v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        More Info
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENT ROWS ============ -->
+<main class="content">
+
+  <section class="row" id="continue-watching" data-row>
+    <h2 class="row__title">Continue Watching for Sruthi</h2>
+    <div class="row__viewport">
+      <button class="row__arrow row__arrow--left" aria-label="Scroll left">&#8249;</button>
+      <ul class="row__track"></ul>
+      <button class="row__arrow row__arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="row" id="trending" data-row>
+    <h2 class="row__title">Trending Now</h2>
+    <div class="row__viewport">
+      <button class="row__arrow row__arrow--left" aria-label="Scroll left">&#8249;</button>
+      <ul class="row__track"></ul>
+      <button class="row__arrow row__arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="row" id="popular" data-row>
+    <h2 class="row__title">Popular on Netflix</h2>
+    <div class="row__viewport">
+      <button class="row__arrow row__arrow--left" aria-label="Scroll left">&#8249;</button>
+      <ul class="row__track"></ul>
+      <button class="row__arrow row__arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="row" id="tv" data-row>
+    <h2 class="row__title">TV Dramas</h2>
+    <div class="row__viewport">
+      <button class="row__arrow row__arrow--left" aria-label="Scroll left">&#8249;</button>
+      <ul class="row__track"></ul>
+      <button class="row__arrow row__arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="row" id="scifi" data-row>
+    <h2 class="row__title">Sci-Fi &amp; Fantasy</h2>
+    <div class="row__viewport">
+      <button class="row__arrow row__arrow--left" aria-label="Scroll left">&#8249;</button>
+      <ul class="row__track"></ul>
+      <button class="row__arrow row__arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="row" id="acclaimed" data-row>
+    <h2 class="row__title">Critically Acclaimed</h2>
+    <div class="row__viewport">
+      <button class="row__arrow row__arrow--left" aria-label="Scroll left">&#8249;</button>
+      <ul class="row__track"></ul>
+      <button class="row__arrow row__arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- no-results message (hidden by default) -->
+  <p id="noResults" hidden style="text-align:center;padding:60px 20px;color:#b7b7bd;font-size:18px;">
+    No titles match your search.
+  </p>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__social">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V8c0-1.1.9-2 2-2h2V2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4Z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      </a>
+      <a href="#" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 3 3 21M21 21 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3V9Z" fill="currentColor"/></svg>
+      </a>
+    </div>
+
+    <div class="footer__cols">
+      <div class="footer__col">
+        <a href="#">Audio &amp; Subtitles</a>
+        <a href="#">Audio Description</a>
+        <a href="#">Help Center</a>
+        <a href="#">Gift Cards</a>
+      </div>
+      <div class="footer__col">
+        <a href="#">Media Center</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Jobs</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer__col">
+        <a href="#">Privacy</a>
+        <a href="#">Legal Notices</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Corporate Information</a>
+      </div>
+      <div class="footer__col">
+        <a href="#">Contact Us</a>
+        <a href="#">Speed Test</a>
+        <a href="#">Only on Netflix</a>
+        <a href="#">Ways to Watch</a>
+      </div>
+    </div>
+
+    <button class="footer__lang">
+      <svg viewBox="0 0 24 24" fill="none" width="16">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M3 12h18M12 3a13 13 0 0 1 0 18 13 13 0 0 1 0-18Z" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      English
+    </button>
+
+    <p class="footer__copy">
+      This is a front-end UI clone built for learning &amp; portfolio purposes — not affiliated with Netflix, Inc. © 2026 Netflix Clone Project.
+    </p>
+  </div>
+</footer>
+
+<!-- ============ DETAIL MODAL ============ -->
+<div class="modal" id="detailModal" aria-hidden="true">
+  <div class="modal__backdrop" id="modalBackdrop"></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal__banner" id="modalBanner">
+      <div class="modal__bannerLetter" id="modalBannerLetter">S</div>
+      <div class="modal__bannerActions">
+        <button class="btn btn--play btn--sm">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Play
+        </button>
+      </div>
+    </div>
+    <div class="modal__body">
+      <h3 id="modalTitle">Title</h3>
+      <div class="modal__meta">
+        <span class="match" id="modalMatch">95% Match</span>
+        <span id="modalYear">2024</span>
+        <span class="tag" id="modalRating">16+</span>
+        <span id="modalDuration">1 Season</span>
+      </div>
+      <p id="modalDesc">Description goes here.</p>
+      <p class="modal__genres" id="modalGenres">Genre</p>
+      <div class="modal__iconActions">
+        <button class="icon-btn" aria-label="Add to My List">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Like">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 11v9H4v-9h3Zm0 0 3.5-7c.4-.8 1.6-.5 1.5.4l-.6 4.6H17a2 2 0 0 1 2 2.3l-1 5.7a2 2 0 0 1-2 1.6H7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
